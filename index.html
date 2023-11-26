@@ -46,7 +46,7 @@
 
     <main>
         <div class="row ">
-            <div id="content" class="col-3">
+            <div id="content" class="col-sm-3">
                 <div>
                     <select name="" id="" style="width: 100%; text-align: center; background-color: #f5f5f5; border-radius: 0%; border-radius: 10px; height: 44px;" class="form-select mb-2 shadow">
                         <option value="" >Take Away</option>
@@ -61,16 +61,16 @@
 
                 <div class="p-3 border border-opacity-25 border-0"   style="height: 275px; max-height: 275px; overflow-y: scroll; background-color: #F5F5F5; " id="boxOrder">
 
-                    <!-- <div class="row me-0 p-1 mb-2 scroll" style="border: black solid 1px; background-color: #F5F5F5; overflow-x: auto;" id="order">
+                    <!-- <div class="row me-0 p-1 mb-2 scroll border-0 shadow rounded-2" style=" background-color: #F5F5F5; overflow-x: auto;" id="order">
                         <div class="col-10">
                             <div class="d-flex justify-content-between ">
-                                <p class="mb-0 fw-semibold">The Marvels</p>
-                                <p class="mb-0 fw-bold ">Rp 50.000</p>
+                                <p class="mb-0 fw-semibold">Roti</p>
+                                <p class="mb-0 fw-bold ">Rp. 20.000</p>
                             </div>
                             <div class="row d-flex mb-0" style="font-size: x-small;">
                                 <div class="col-7 d-flex justify-content-between align-items-center" >
                                     <p class="mb-0">unit price:</p>
-                                    <p class="mb-0 fw-bold">Rp 50.000</p>
+                                    <p class="mb-0 fw-bold">Rp. 20.000</p>
                                 </div>
                                 <div class="col-5 d-flex justify-content-between align-items-center">
                                     <p class="mb-0">quantity:</p>
@@ -78,12 +78,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2  position-relative">
-                            <button type="button" class="btn border-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" class="position-absolute top-50 start-50 translate-middle "><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-                            </button>
+                        <div class="col-2  position-relative align-items-center">
+                            <i class='bx bx-trash' style="cursor: pointer; font-size: 30px; text-align: center;" onclick="Hapus(`+ index + `)"></i>
+                        
                         </div>
-                    </div> -->
+                    </div>  -->
                      
                 </div>
 
@@ -324,21 +323,20 @@
             `);
         })
         console.log(cart)
-        var tot = 0;
+        var belanja = 0;
         var pjkpersentase = 0.1;
         var totalpajak = 0;
         for(var i = 0; i < cart.length; i++) {
-            tot = tot + (cart[i].count * cart[i].price)
+            belanja = belanja + (cart[i].count * cart[i].price)
         }
-        var Pajak = tot * pjkpersentase;
+        var Pajak = belanja * pjkpersentase;
         totalpajak += Pajak;
-        var total = Pajak + tot;
+        var total = Pajak + belanja;
 
         $("#tax").text("Rp. " + Pajak)
         $("#totalAmount").text("Rp. " + total)
     }
     function Hapus(index) {
-        let text;
         if (confirm (cart.splice(index, 1) && "Apakah Anda Yakin Untuk menghapus pesanan?")) {
             showCartList();
         } 
