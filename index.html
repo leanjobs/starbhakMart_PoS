@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbhak Mart</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -20,234 +20,227 @@
                 overflow: scroll;
             }
         }
-        @media print {
-      body * {
-        visibility: hidden;
-      }
-      #content, #content * {
-        visibility: visible;
-      }
-      #content {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-    }
+        
     </style>
 
 </head>
 
 <body style="background-color: #D6E3F2;">
-    <nav class="navbar  mb-3 p-3 shadow" style=" border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: #F5F5F5; ">
+    <nav class="navbar  mb-3 p-2 shadow" style=" border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background-color: #F5F5F5; ">
         <div class="container-fluid">
-            <a href="" class="navbar-brand" style="color: black; font-size: 30px; font-weight: bold;">Starbhak Mart</a>
+            <a href="" class="navbar-brand" style="color:#47526D; font-size: 30px; font-weight: bold; text-align: center;"> 
+                <img src="assets/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
+                Starbhak Mart</a>
         </div> 
     </nav>
 
     <main>
-        <div class="row ">
-            <div id="content" class="col-sm-3">
-                <div>
-                    <select name="" id="" style="width: 100%; text-align: center; background-color: #f5f5f5; border-radius: 0%; border-radius: 10px; height: 44px;" class="form-select mb-2 shadow">
-                        <option value="" >Take Away</option>
-                        <option value="">Dine In</option>
-                    </select>
-                    <div class="mb-2 d-flex  align-items-center p-2 shadow" style="background-color:#F5F5F5; justify-content: center; border-radius: 10px; height: 44px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="me-2 " viewBox="0 0 448 512"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
-                        <p class="mb-0">Mang. Jay</p>
-                    </div>
-                    
-                </div>
-
-                <div class="p-3 border border-opacity-25 border-0"   style="height: 275px; max-height: 275px; overflow-y: scroll; background-color: #F5F5F5; " id="boxOrder">
-
-                    <!-- <div class="row me-0 p-1 mb-2 scroll border-0 shadow rounded-2" style=" background-color: #F5F5F5; overflow-x: auto;" id="order">
-                        <div class="col-10">
-                            <div class="d-flex justify-content-between ">
-                                <p class="mb-0 fw-semibold">Roti</p>
-                                <p class="mb-0 fw-bold ">Rp. 20.000</p>
-                            </div>
-                            <div class="row d-flex mb-0" style="font-size: x-small;">
-                                <div class="col-7 d-flex justify-content-between align-items-center" >
-                                    <p class="mb-0">unit price:</p>
-                                    <p class="mb-0 fw-bold">Rp. 20.000</p>
-                                </div>
-                                <div class="col-5 d-flex justify-content-between align-items-center">
-                                    <p class="mb-0">quantity:</p>
-                                    <p class="mb-0">1</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2  position-relative align-items-center">
-                            <i class='bx bx-trash' style="cursor: pointer; font-size: 30px; text-align: center;" onclick="Hapus(`+ index + `)"></i>
-                        
-                        </div>
-                    </div>  -->
-                     
-                </div>
-
-                <div class="shadow rounded-2 p-2 mt-2 mb-2" style="background-color: #F5F5F5;">
-                    <div class="d-flex justify-content-between p-2">
-                        <p class="mb-0 fw-semibold">Discount:</p>
-                        <p class="mb-0"></p>
-                    </div>
+        <div class="container-fluid mb-1" >
+            <div class="row ">
+                <div id="content" class="col-lg-3 col-md-12">
                     <div>
-                    </div>
-                    <div class="d-flex justify-content-between p-2">
-                        <p class="mb-0 fw-semibold">Tax:</p>
-                        <p class="mb-0" id="tax">Rp. 0</p>
-                    </div>
-                    <div class="d-flex justify-content-between p-2 rounded-2" style="background-color:#5376DE;">
-                        <p class="mb-0 fw-semibold" style="color: white;">Total Amount:</p>
-                        <p class="mb-0" id="totalAmount" style="color: white;">Rp. 0</p>
-                    </div>
-                </div>
-
-            </div>
-               
-            <div class="col-9">
-                <div class="d-flex justify-content-between align-items-center p-3" style="width: 100%; height: 50px;" >
-                    <p class="mb-0 fw-semibold" style="font-size: 20px;">Item list</p>
-                    <div class="w-auto d-flex justify-content-center align-items-center ">
-                        <img src="assets/search.svg" alt="" style="width: 30px; height: 30px;">
-                        <img src="assets//titikTiga.svg" alt="" style="width: 30px; height: 30px;">
-                        <img src="assets/upDown.svg"  alt="" style="width: 30px; height: 30px;">
+                        <select name="" id="" style="width: 100%; text-align: center; background-color: #f5f5f5; border-radius: 0%; border-radius: 10px; height: 44px;" class="form-select mb-2 shadow">
+                            <option value="" >Take Away</option>
+                            <option value="">Dine In</option>
+                        </select>
+                        <div class="mb-2 d-flex  align-items-center p-2 shadow" style="background-color:#F5F5F5; justify-content: center; border-radius: 10px; height: 44px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="me-2 " viewBox="0 0 448 512"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+                            <p class="mb-0">Mang. Jay</p>
+                        </div>
                         
                     </div>
-                </div>
-                <div class="p-4 me-1 border border-black border-0 shadow" style="max-height: 450px; overflow-y: scroll; background-color: #F5F5F5; height: 500px; border-radius: 20px;">
-                    
-                    <div class="row ms-1">
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Banana Cake', 1, 30000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/bananacake.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Banana Cake</h5>
-                                <p class="card-text product-price" id="product-price">Rp 30.000</p>
-                            </button>
+    
+                    <div class="p-3 border border-opacity-25 border-0"   style="height: 275px; overflow-y: scroll; background-color: #F5F5F5; " id="boxOrder">
+    
+                        <!-- <div class="row me-0 p-1 mb-2 scroll border-0 shadow rounded-2" style=" background-color: #F5F5F5; overflow-x: auto;" id="order">
+                            <div class="col-10">
+                                <div class="d-flex justify-content-between ">
+                                    <p class="mb-0 fw-semibold">Roti</p>
+                                    <p class="mb-0 fw-bold ">Rp. 20.000</p>
+                                </div>
+                                <div class="row d-flex mb-0" style="font-size: x-small;">
+                                    <div class="col-7 d-flex justify-content-between align-items-center" >
+                                        <p class="mb-0">unit price:</p>
+                                        <p class="mb-0 fw-bold">Rp. 20.000</p>
+                                    </div>
+                                    <div class="col-5 d-flex justify-content-between align-items-center">
+                                        <p class="mb-0">quantity:</p>
+                                        <p class="mb-0">1</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2  position-relative align-items-center">
+                                <i class='bx bx-trash' style="cursor: pointer; font-size: 30px; text-align: center;" onclick="Hapus(`+ index + `)"></i>
+                            
+                            </div>
+                        </div>  -->
+                         
+                    </div>
+    
+                    <div class="shadow rounded-2 p-2 mt-2 mb-2" style="background-color: #F5F5F5;">
+                        <div class="d-flex justify-content-between p-2">
+                            <p class="mb-0 fw-semibold">Discount:</p>
+                            <p class="mb-0"></p>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Burger Original', 1, 20000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/burger_original.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Burger Original</h5>
-                                <p class="card-text product-price" id="product-price">Rp 20.000</p>
-                            </button>
+                        <div>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Caramel Latte', 1, 27000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/caramel_machiato.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Caramel Latte</h5>
-                                <p class="card-text product-price" id="product-price">Rp 27.000</p>
-                            </button>
+                        <div class="d-flex justify-content-between p-2">
+                            <p class="mb-0 fw-semibold">Tax:</p>
+                            <p class="mb-0" id="tax">Rp. 0</p>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Crapes Rainbow', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/crapesrainbow.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Crapes Rainbow</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('galaxy', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/galaxy.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">galaxy</h5>
-                                <p class="card-text product-price" id="product-price">Rp 20.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Ice Creamblac', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/icecreamblac.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Ice Creamblac</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Ice Cream M', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/icecreammatcha.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Ice Cream M</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Lime', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/lime.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Lime</h5>
-                                <p class="card-text product-price" id="product-price">Rp 10.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Matcha', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/matcha.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Matcha Crapes', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/matchacrapes.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha Crapes</h5>
-                                <p class="card-text product-price" id="product-price">Rp 35.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Matcha Soufle', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/matchasoufle.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha Soufle</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Sandwich', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/sandwich.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Sandwich</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Strawberry', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/strawberry.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Strawberry</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Srwchee', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/srawchee1.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Srwchee</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Straw', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/starw.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Strew</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('StrawChee', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/strawchee.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">StrawChee</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Sunset', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/sunset.jpg" alt="" >
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Sunset</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
-                            <button onclick="tambahpesanan('Telang', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
-                                <img class="card-img mb-1 rounded-2" src="assets/telang.jpg" alt="">
-                                <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Telang</h5>
-                                <p class="card-text product-price" id="product-price">Rp 50.000</p>
-                            </button>
+                        <div class="d-flex justify-content-between p-2 rounded-2" style="background-color:#5376DE;">
+                            <p class="mb-0 fw-semibold" style="color: white;">Total Amount:</p>
+                            <p class="mb-0" id="totalAmount" style="color: white;">Rp. 0</p>
                         </div>
                     </div>
+    
                 </div>
-                
+                   
+                <div class="col-lg-9 col-md-12">
+                    <div class="d-flex justify-content-between align-items-center p-3" style="width: 100%; height: 50px;" >
+                        <p class="mb-0 fw-semibold" style="font-size: 20px;">Item list</p>
+                        <div class="w-auto d-flex justify-content-center align-items-center ">
+                            <img src="assets/search.svg" alt="" style="width: 30px; height: 30px;">
+                            <img src="assets//titikTiga.svg" alt="" style="width: 30px; height: 30px;">
+                            <img src="assets/upDown.svg"  alt="" style="width: 30px; height: 30px;">
+                            
+                        </div>
+                    </div>
+                    <div class="p-4 me-1 border border-black border-0 shadow" style="max-height: 450px; overflow-y: scroll; background-color: #F5F5F5; height: 500px; border-radius: 20px;">
+                        
+                        <div class="row ms-1">
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Banana Cake', 1, 30000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/bananacake.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Banana Cake</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 30.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Burger Original', 1, 20000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/burger_original.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Burger Original</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 20.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Caramel Latte', 1, 27000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/caramel_machiato.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Caramel Latte</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 27.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Crapes Rainbow', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/crapesrainbow.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Crapes Rainbow</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('galaxy', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/galaxy.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">galaxy</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 20.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Ice Creamblac', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/icecreamblac.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Ice Creamblac</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Ice Cream M', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/icecreammatcha.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Ice Cream M</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Lime', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/lime.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Lime</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 10.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Matcha', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/matcha.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Matcha Crapes', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/matchacrapes.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha Crapes</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 35.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Matcha Soufle', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/matchasoufle.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Matcha Soufle</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Sandwich', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/sandwich.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Sandwich</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Strawberry', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/strawberry.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Strawberry</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Srwchee', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/srawchee1.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Srwchee</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Straw', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/starw.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Strew</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('StrawChee', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/strawchee.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">StrawChee</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Sunset', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/sunset.jpg" alt="" >
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Sunset</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
+                                <button onclick="tambahpesanan('Telang', 1, 50000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
+                                    <img class="card-img mb-1 rounded-2" src="assets/telang.jpg" alt="">
+                                    <h5 class="card-title product-name" style="font-size: medium; text-align: start;" id="product-name">Telang</h5>
+                                    <p class="card-text product-price" id="product-price">Rp 50.000</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
+
         </div>
     </main>
 
@@ -300,15 +293,15 @@
            <div class="row me-0 p-1 mb-2 scroll border-0 shadow rounded-2" style=" background-color: #F5F5F5; overflow-x: auto;" id="order">
                         <div class="col-10">
                             <div class="d-flex justify-content-between ">
-                                <p class="mb-0 fw-semibold">`+ item.name +`</p>
-                                <p class="mb-0 fw-bold ">Rp. `+item.price+`</p>
+                                <p class="mb-0 fw-semibold" style="font-size:15px;">`+ item.name +`</p>
+                                <p class="mb-0 fw-bold " style="font-size:12px;">Rp. `+item.price * item.count+`</p>
                             </div>
-                            <div class="row d-flex mb-0" style="font-size: x-small;">
-                                <div class="col-7 d-flex justify-content-between align-items-center" >
+                            <div class="d-flex mb-0 justify-content-between" style="font-size: x-small;">
+                                <div class="d-flex justify-content-between align-items-center" >
                                     <p class="mb-0">unit price:</p>
                                     <p class="mb-0 fw-bold">Rp. `+ item.price + `</p>
                                 </div>
-                                <div class="col-5 d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
                                     <p class="mb-0">quantity:</p>
                                     <p class="mb-0">`+ item.count + `</p>
                                 </div>
