@@ -21,8 +21,10 @@
                 width: 40%;
                 height: 100px;
                 overflow: scroll;
+                
             }
         }
+       
         
     </style>
 
@@ -41,7 +43,7 @@
         <div class="container-fluid mb-1" >
             <div class="row ">
                 <div id="content" class="col-sm-3">
-                    <div>
+                    <div id="status_kasir">
                         <select name="" id="" style="width: 100%; text-align: center; background-color: #f5f5f5; border-radius: 0%; border-radius: 10px; height: 44px;" class="form-select mb-2 shadow">
                             <option value="" >Take Away</option>
                             <option value="">Dine In</option>
@@ -80,7 +82,7 @@
                          
                     </div>
     
-                    <div class="shadow rounded-2 p-2 mt-2 mb-2" style="background-color: #F5F5F5;">
+                    <div class="shadow rounded-2 p-2 mt-2 mb-2" style="background-color: #F5F5F5;" id="ringkasan">
                         <div class="d-flex justify-content-between p-2">
                             <p class="mb-0 fw-semibold">Discount:</p>
                             <p class="mb-0"></p>
@@ -105,13 +107,17 @@
                         <div class="w-auto d-flex justify-content-center align-items-center ">
                             <img src="assets/search.svg" alt="" style="width: 30px; height: 30px;">
                             <input type="text" id="searchInput" placeholder="Search items..." style="width: 200px; padding: 5px; margin: 3px; border-radius: 10px;">
-                            <img src="assets/upDown.svg"  alt="" style="width: 30px; height: 30px;">
+                            <button style="background-color: transparent; border: none;" id="sortBy" onclick="sortItems()"">
+                                <img src="assets/upDown.svg" alt="" style="width: 30px; height: 30px;">
+                            </button>
                             
                         </div>
                     </div>
-                    <div class="p-4 me-1 border border-black border-0 shadow" style="max-height: 450px; overflow-y: scroll; background-color: #F5F5F5; height: 500px; border-radius: 20px;">
+                    <div class="p-4 me-1 border border-black border-0 shadow" style="max-height: 450px; overflow-y: scroll; background-color: #F5F5F5; height: 500px; border-radius: 20px;" id="boxItem">
                         
-                        <div class="row ms-1">
+                        
+                        <div class="row" id="kolomItem"></div>
+                        <div class="row ms-1"  id="itemProduct">
                             <div class="col-lg-2 col-md-3 col-sm-6 p-0" style="margin: 10px;" id="product">
                                 <button onclick="tambahpesanan('Banana Cake', 1, 30000)" class="item card-body p-3 border-0 shadow rounded-3" type="button" style=" background-color: #F5F5F5; width: 150px;" id="item">
                                     <img class="card-img mb-1 rounded-2" src="assets/bananacake.jpg" alt="" >
@@ -265,20 +271,43 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-     function print() {
-      var contentDiv = document.getElementById('content');
-      var contentToPrint = contentDiv.innerHTML;
-      var newWindow = window.open('', '_blank');
-      newWindow.document.open();
-      newWindow.document.write(  contentToPrint  );
-      newWindow.document.close();
-      newWindow.print();
+    function print() {
+        var statusDiv = document.getElementById('status_kasir');
+        var statusToPrint = statusDiv.innerHTML;
+        var ringkasanDiv = document.getElementById('ringkasan');
+        var ringkasanToPrint = ringkasanDiv.innerHTML;
+        var boxOrderDiv = document.getElementById('boxOrder');
+        var boxOrderToPrint = boxOrderDiv.innerHTML;
+        var newWindow = window.open('', '_blank');
+        newWindow.document.open();
+        newWindow.document.write(`
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Print Preview</title>
+                <!-- Include your main stylesheets here -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+                <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+                <!-- Include additional styles if needed -->
+                <style>
+                  
+                </style>
+            </head>
+            <body>
+                ${statusToPrint}
+                ${boxOrderToPrint}
+                ${ringkasanToPrint}
+            </body>
+            </html>
+        `);
+        newWindow.document.close();
+        newWindow.print();
     }
     var cart = [];
     function tambahpesanan(name, count, price) {
-        //mendapatkan array saat ini
         var existingItem = cart.find(element => element.name === name);
-        //memeriksa array sudah ada atau belum
         if (!existingItem) {
             cart.push({ name: name, count: count, price: price });
         } else {
@@ -339,16 +368,33 @@
     }
     
     $("#searchInput").on("input", function () {
-        var searchTerm = $(this).val().toLowerCase();
-        $("#product button").each(function () {
-            var itemName = $(this).find(".product-name").text().toLowerCase();
-            if (itemName.includes(searchTerm)) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        });
+    var searchTerm = $(this).val().toLowerCase();
+    var found = false; 
+
+    $("#product button").filter(function () {
+        var itemName = $(this).find(".product-name").text().toLowerCase();
+        if (itemName.includes(searchTerm)) {
+            $(this).show();
+            found = true; 
+        } else {
+            $(this).hide();
+        }
     });
+
+    if (!found) {
+        if ($("#noProductMessage").length === 0) {
+            $("#kolomItem").append(
+                '<div id="noProductMessage" style="background-color: rgb(236, 218, 218);"><p>Produk tidak tersedia</p></div>'
+            );
+        } else {
+            $("#noProductMessage").show();
+        }
+    } else {
+        $("#noProductMessage").hide();
+    }
+});
+
+
 
 </script>
 
